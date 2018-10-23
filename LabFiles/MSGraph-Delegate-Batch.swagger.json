@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "MSGraph-Delegate-Batch",
+        "description": "",
+        "version": "1.0"
+    },
+    "host": "graph.microsoft.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [],
+    "produces": [],
+    "paths": {
+        "/beta/$batch": {
+            "post": {
+                "responses": {
+                    "default": {
+                        "description": "default",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "summary": "Batch",
+                "description": "Execute Batch with Delegate Permission",
+                "operationId": "Batch",
+                "x-ms-visibility": "important",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "properties": {}
+                    },
+                    "x-ms-visibility": "important"
+                }]
+            }
+        }
+    },
+    "definitions": {},
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {
+        "oauth2_auth": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+            "tokenUrl": "https://login.windows.net/common/oauth2/authorize"
+        }
+    },
+    "security": [{}],
+    "tags": []
+}
