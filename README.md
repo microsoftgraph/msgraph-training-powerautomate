@@ -19,7 +19,7 @@ In this lab you will leverage the Microsoft Graph JSON Batching REST API to crea
 |        Roles         |                        Author(s)                        |
 | -------------------- | ------------------------------------------------------- |
 | Lab Manuals  | John Liu (Microsoft MVP, SharePointGurus ) @johnnliu |
-| Lab Manuals  | Pete Skelly (ThreeWill) @pkskelly |
+| Lab Manuals  | Pete Skelly (ThreeWill) @pskelly |
 
 ## Version history
 
