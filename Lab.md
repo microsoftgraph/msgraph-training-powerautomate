@@ -33,47 +33,47 @@ This step will create a new Azure Active Directory Application which will be use
 2. Click the **Azure Active Directory** link in the left navigation menu
 3. Click on the **App registrations** entry on the **Manage** section of the App Registrations blade
 
-![app-registration](./Images/Picture1.png)
+![app-registration-1](./Images/app-reg1.png)
 
 4. Click the **New application registration** menu item at the top of the App Registrations blade
 
-![app-registration](./Images/Picture2.png)
+![app-registration-2](./Images/app-reg2.png)
 
 5. Enter ``MS Graph Batch App`` in the **Name** field for the name of the application
 6. Enter https://localhost.com/$batch for the Sign-on URL
 7. Click **Create** at the bottom of the blade
 
-![app-registration](./Images/Picture3.png)
+![app-registration-3](./Images/app-reg3.png)
 
 8. On the Registered App page, click the **Settings** gear under the application name
 9. Copy the **Application ID** of the application, and save for Step 2
 
-![app-registration](./Images/Picture4.png)
+![app-registration-4](./Images/app-reg4.png)
 
 10. Click on the **Required Permissions** menu item in the Settings blade
 11. Click **Add** at the top of the Required Permissions blade
 
-![app-registration](./Images/Picture5.png)
+![app-perms-1](./Images/app-perms1.png)
 
 12. Click the **Select API** option in the Add API Access blade
 13. In the Select an API blade, click the **Microsoft Graph** item
 14. Click **Select** at the bottom of the blade  
 
-![app-registration](./Images/Picture6.png)
+![app-perms-2](./Images/app-perms2.png)
 
 15. On the **Enable Access** blade, scroll down to the Delegated Permissions section
 16. Select the **Read all groups** and the **Read and write all groups** delegated permissions
 17. Click **Select** at the bottom of the blade
 18. Click **Done** at the bottom of the Add API access blade
 
- ![app-registration](./Images/Picture7.png)
+ ![app-perms-3](./Images/app-perms3.png)
  
 19.	Click the **Keys** menu item on the Settings blade
 20.	Enter `forever` in the **Key description** and select **Never expires** from the Duration drop down menu
 21.	Click **Save** at the top of the Keys blade
 22.	Copy the key value for the new key and save for Step 2.  
 
-![app-registration](./Images/Picture8.png)
+![app-key-1](./Images/app-key1.png)
 
 > [!IMPORTANT]
 > This step is critical as the key will not be accessible once you close this blade. Save this key to a text editor for use in upcoming steps.
@@ -88,23 +88,23 @@ This step will create a new custom connector which can be used in Flow or in Azu
     1. Click on the Raw button
     2. Copy the file contents
     3. Save the content to a local file named MSGraph-Delegate-Batch.swagger.json
-2.	Open a browser and navigate to https://flow.microsoft.com
-3.	Click the gear icon in the upper right
-4.	Select the **Custom Connectors** item in the drop-down menu
+2. Open a browser and navigate to https://flow.microsoft.com
+3. Click the gear icon in the upper right
+4. Select the **Custom Connectors** item in the drop-down menu
 
-![app-registration](./Images/Picture9.png)
+![flow-conn-1](./Images/flow-conn1.png)
 
-5.	On the Custom Connectors screen click the **+Create Custom Connector** link in the top right
+5. On the Custom Connectors screen click the **+Create Custom Connector** link in the top right
 6. Select the **Import and Open API file** item in the drop-down menu
- 
- ![app-registration](./Images/Picture10.png)
+
+ ![flow-conn-2](./Images/flow-conn2.png)
 
 7.	Enter `MS Graph Batch Connector` in the **Custom connector name** text box
 8.	Click the folder icon to upload the Open API file
 9.	Browse to the local MSGraph-Delegate-Batch.swagger.json file you downloaded previously
 10.	Click Continue to upload the connector file
  
- ![app-registration](./Images/Picture11.png)
+ ![flow-conn-3](./Images/flow-conn3.png)
 
 11.	On the Connector configuration screen, click on the **Security** link in the navigation menu  
 12.	Enter in the **Client Id**  (Application Id copied in Step 1.9 above)
@@ -112,16 +112,16 @@ This step will create a new custom connector which can be used in Flow or in Azu
 14.	Enter https://graph.microsoft.com (no trailing /) as the **Resource URL** (sometimes also known as Audience)
 15.	Click **Create Connector** on the top-right
  
-![app-registration](./Images/Picture12.png)
+![flow-conn-4](./Images/flow-conn4.png)
 
 16.	After the connector has been created, copy the generated **Redirect URL** 
 
-![app-registration](./Images/Picture13.png)
+![flow-conn-5](./Images/flow-conn5.png)
 
 17. Go back to https://aad.portal.azure.com under the registered application, and add the **Redirect Url** you copied as an additional Reply URL to the App registration.
 18. Save the application in Azure Active Directory portal.
  
-![app-registration](./Images/Picture14.png)
+![flow-conn-6](./Images/flow-conn6.png)
 
 ## Step 3: Authorize the Microsoft Graph JSON Batch custom connector
 
@@ -131,15 +131,15 @@ The final step to ensure our connector is ready for use is to authorize and test
 2. Click on **+ New Connection** link
 3. Click **Create** and sign in with the Azure Active Directory account
 
-![app-registration](./Images/Picture15.png)
+![flow-conn-7](./Images/flow-conn7.png)
 
 4. Check **Consent on behalf of your organization** and then click **Accept **to Authorize Permissions
 
-![app-registration](./Images/Picture16.png)
+![flow-conn-8](./Images/flow-conn8.png)
 
 5. After permission has been authorized, a Connection will be created in Flow.
 
-![app-registration](./Images/Picture17.png)
+![flow-conn-9](./Images/flow-conn9.png)
 
 The custom connector is now configured and enabled for us to consume the Microsoft Graph JSON Batching methods.  There may be a delay in permissions being applied and available, but the connector is now configured.
 
@@ -154,7 +154,7 @@ Before creating a Flow to consume our new connector, let’s discover some of th
 2. Click the **show more samples** link in the left navigation pane
 3. Toggle the samples for Batching and Teams to “On”
 
-![app-registration](./Images/Picture18.png)
+![graph-explore-1](./Images/graph-explore1.png)
 
 4.	Select the Batching example to **Perform parallel GETs** in the left menu
 5.	Click the **Run Query** button at the top right of the screen.
@@ -185,7 +185,8 @@ The sample batch operation batches three (3) HTTP GET requests and issues a sing
 
 The response returned is shown below.  Note the array of responses that is returned by Microsoft Graph. The responses to the batched requests may appear in a different order. The “id” property should be used to correlate individual batch requests with specific batch responses.  
 
-![app-registration](./Images/Picture19.png)
+![graph-explore-2](./Images/graph-explore2.png)
+
 
 Each response with contain an `id`, `status code`, `headers`, and `error information` if the batch request fails.  To ensure an order of operations for the requests, individual requests can be sequenced using the [dependsOn](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching#sequencing-requests-with-the-dependson-property) property.
 
@@ -195,11 +196,11 @@ For example, execute the following two queries in the [Microsoft Graph Explorer]
 
 1. Query the /v1.0/$batch endpoint using the url “/me”
 
-![app-registration](./Images/Picture20.png)
+![graph-explore-3](./Images/graph-explore3.png)
 
 2. Query the /beta/$batch endpoint url “/me”
 
-![app-registration](./Images/Picture21.png)
+![graph-explore-4](./Images/graph-explore4.png)
 
 What are the differences in the results returned?   Try some other queries to identify some of the differences.
 
@@ -253,7 +254,7 @@ Now that we understand how to issue JSON batch requests and interpret and correl
 
 In the end our Flow will look similar to the following image:  
 
-![app-registration](./Images/Picture22.png)
+![flow-team-1](./Images/flow-team1.png)
 
 1. Open [Flow](https://flow.microsoft.com) and sign in
 2. Click **My Flows** in the top navigation
@@ -288,7 +289,7 @@ In the end our Flow will look similar to the following image:
 
 10. Replace each `REPLACE_WITH_NAME_FROM_TRIGGER` placeholder by selecting the `Name` value from the manual trigger from the **Add dynamic content**
 
-![app-registration](./Images/Picture23.png)
+![flow-team-2](./Images/flow-team2.png)
 
 11.	Click **+New action**, search for `delay` and add a Delay action and configure for 1 minute.
 12. Click **+New step** and type `Batch` in the search box
@@ -332,7 +333,7 @@ body('Batch_POST-groups')?['responses']?[0]?['body']?['id']
 
 This formula specifies that we want to use the group ID from the result of the first action.
 
-![app-registration](./Images/Picture24.png)
+![flow-team-3](./Images/flow-team3.png)
 
 17. Click **Save** the Flow and click **Test** to execute the Flow.
 
@@ -340,10 +341,11 @@ This formula specifies that we want to use the group ID from the result of the f
 
 19. Provide a name without spaces, and click **Run** to create a Team
  
-![app-registration](./Images/Picture25.png)
+![flow-team-4](./Images/flow-team4.png)
+
 
 20. Finally. click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
 
 Once the Flow completes, your Office 365 Group and Team have been configured. Click on the Batch action items to view the results of the JSON Batch calls.
 
-![app-registration](./Images/Picture26.png)
+![flow-team-5](./Images/flow-team5.png)
