@@ -62,7 +62,7 @@ This step will create a new Azure Active Directory Application which will be use
 ![app-perms-2](./Images/app-perms2.png)
 
 15. On the **Enable Access** blade, scroll down to the Delegated Permissions section
-16. Select the **Read all groups** and the **Read and write all groups** delegated permissions
+16. Select the **Read and write all groups** delegated permissions
 17. Click **Select** at the bottom of the blade
 18. Click **Done** at the bottom of the Add API access blade
 
@@ -127,13 +127,16 @@ This step will create a new custom connector which can be used in Flow or in Azu
 
 The final step to ensure our connector is ready for use is to authorize and test the custom connector to create a cached connection.
 
+> [!IMPORTANT]
+> The following steps requires that you are logged in with administrator privileges.
+
 1. On the Connector configuration screen, click on the **Test** link (“4 Test”) in the navigation menu
 2. Click on **+ New Connection** link
 3. Click **Create** and sign in with the Azure Active Directory account
 
 ![flow-conn-7](./Images/flow-conn7.png)
 
-4. Check **Consent on behalf of your organization** and then click **Accept **to Authorize Permissions
+4. Check **Consent on behalf of your organization** and then click **Accept** to Authorize Permissions
 
 ![flow-conn-8](./Images/flow-conn8.png)
 
@@ -194,11 +197,31 @@ In addition to sequencing and dependency operations, JSON Batching assumes a bas
 
 For example, execute the following two queries in the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer).
 
-1. Query the /v1.0/$batch endpoint using the url “/me”
+1. Query the `/v1.0/$batch` endpoint using the url “/me” (copy and paste request below).
+
+```
+   "requests" : [
+        {
+          "id": 1,
+          "url": "/me",
+          "method": "GET"
+        }
+   ]
+```
 
 ![graph-explore-3](./Images/graph-explore3.png)
 
-2. Query the /beta/$batch endpoint url “/me”
+2. Now query the `/beta/$batch` endpoint url “/me”  with the same request content (copy and paste request below).
+
+```
+   "requests" : [
+        {
+          "id": 1,
+          "url": "/me",
+          "method": "GET"
+        }
+   ]
+```
 
 ![graph-explore-4](./Images/graph-explore4.png)
 
@@ -325,11 +348,13 @@ In the end our Flow will look similar to the following image:
 }
 ```
 
-16.	Click `REPLACE WITH FORMULA` and replace with the following formula:
+16.	Click `REPLACE WITH FORMULA` and paste the following formula into the **Expression**:
 
 ```
 body('Batch_POST-groups')?['responses']?[0]?['body']?['id']
 ```
+
+![flow-formula](./Images/flow-formula.png)
 
 This formula specifies that we want to use the group ID from the result of the first action.
 
