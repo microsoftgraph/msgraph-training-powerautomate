@@ -364,6 +364,11 @@ This formula specifies that we want to use the group ID from the result of the f
 
 ![flow-trbl-shoot](./Images/flow-trbl-shoot.png)
 
+> [!TIP]
+> If you get receive and error resembling the image below, the expression is incorrect and likely references a Flow action it cannot find.  Ensure that the action name you are referencing matches exactly and click **Save** again.
+
+![flow-trbl-shoot](./Images/flow-trbl-shoot.png)
+
 18. Click the **I'll perform the trigger** action radio button and click **Test**
 
 19. Provide a name without spaces, and click **Run** to create a Team
