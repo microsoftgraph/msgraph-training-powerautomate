@@ -1,10 +1,10 @@
 # Create a Microsoft Graph JSON Batch Custom Connector for Microsoft Flow & Logic Apps
 
-There are more than 230 out of box connectors for Microsoft Flow. Many of these connectors use the Microsoft Graph to communicate with specific endpoints of Microsoft products, but there is no connector that communicates directly with the Microsoft Graph to cover the entire API.  There are scenarios where we may need to call the Microsoft Graph directly from Flow using basic building blocks of the service.  
+There are more than 230 out of box connectors for Microsoft Flow. Many of these connectors use the Microsoft Graph to communicate with specific endpoints of Microsoft products, but there is no connector that communicates directly with the Microsoft Graph to cover the entire API.  However, there are scenarios where we may need to call the Microsoft Graph directly from Flow using basic building blocks of the service.  
 
-In addition to addressing unique scenarios for calling the Microsoft Graph, a number of Microsoft Graph API endpoints only support [delegated permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).  The HTTP connector in Microsoft Flow enables very flexible integrations, including calling the Microsoft Graph. However, the HTTP connector lacks the capability of caching a user's credentials to enable specific delegated permission scenarios.  In these cases, a custom connector can be created to provide a wrapper around the Microsoft Graph API and enable consuming the API with delegated permissions
+In addition to addressing scenarios for calling the Microsoft Graph directly, a number of Microsoft Graph API endpoints only support [delegated permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).  The HTTP connector in Microsoft Flow enables very flexible integrations, including calling the Microsoft Graph. However, the HTTP connector lacks the capability of caching a user's credentials to enable specific delegated permission scenarios.  In these cases, a custom connector can be created to provide a wrapper around the Microsoft Graph API and enable consuming the API with delegated permissions.
 
-This lab covers creating a custom connector to enable integrations with Microsoft Graph which require [delegated permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference), specifically using [the $batch request endpoint](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching), to provide access to the full power of the Microsoft Graph while using the delegated permissions that require an app to have a “signed-in” user present.  
+This lab covers both of the challenges above.  First, you will create a custom connector to enable integrations with Microsoft Graph which require [delegated permissions](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference).  Second, you will use the [$batch request endpoint](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching), to provide access to the full power of the Microsoft Graph while using the delegated permissions that require an app to have a “signed-in” user present.  
 
 > [!NOTE]
 > This topic is a tutorial on creating a custom connector for use in Microsoft Flow and Azure LogicApps.  This article assumes you have read the [custom connector overview](https://docs.microsoft.com/en-us/connectors/custom-connectors/) to understand the process.
@@ -29,7 +29,7 @@ To complete this exercise in this post you will need the following:
 
 This step will create a new Azure Active Directory Application which will be used to provide the delegated permissions for the custom connector.  
 
-1. Open a browser and navigate to https://aad.portal.azure.com
+1. Open a browser and navigate to [https://aad.portal.azure.com](https://aad.portal.azure.com)
 2. Click the **Azure Active Directory** link in the left navigation menu
 3. Click on the **App registrations** entry on the **Manage** section of the App Registrations blade
 
@@ -78,7 +78,7 @@ This step will create a new Azure Active Directory Application which will be use
 > [!IMPORTANT]
 > This step is critical as the key will not be accessible once you close this blade. Save this key to a text editor for use in upcoming steps.
 
-To enable management of additional service accessible via the Microsoft Graph, including Teams properties, you would need to select additional, appropriate scopes to enable for managing specific services.  For example, to extend our solution to enable creating OneNote Notebooks or Planner plans, buckets and tasks you would need to add additional permission scopes.
+To enable management of additional services accessible via the Microsoft Graph, including Teams properties, you would need to select additional, appropriate scopes to enable managing specific services.  For example, to extend our solution to enable creating OneNote Notebooks or Planner plans, buckets and tasks you would need to add additional permission scopes.
 
 ## Step 2: Create a Custom Connector to use Microsoft Graph JSON Batching
 
@@ -108,7 +108,7 @@ This step will create a new custom connector which can be used in Flow or in Azu
 
 11.	On the Connector configuration screen, click on the **Security** link in the navigation menu  
 12.	Enter in the **Client Id**  (Application Id copied in Step 1.9 above)
-13.	Enter the **Client secret** from above ((Application key copied in Step 1.22 above)
+13.	Enter the **Client secret** from above (Application key copied in Step 1.22 above)
 14.	Enter https://graph.microsoft.com (no trailing /) as the **Resource URL** (sometimes also known as Audience)
 15.	Click **Create Connector** on the top-right
  
@@ -370,7 +370,7 @@ This formula specifies that we want to use the group ID from the result of the f
 
 ![flow-team-4](./Images/flow-team4.png)
 
-20. Finally. click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
+20. Finally, click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
 
 Once the Flow completes, your Office 365 Group and Team have been configured. Click on the Batch action items to view the results of the JSON Batch calls.
 
