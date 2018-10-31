@@ -146,9 +146,6 @@ The final step to ensure our connector is ready for use is to authorize and test
 
 The custom connector is now configured and enabled for us to consume the Microsoft Graph JSON Batching methods.  There may be a delay in permissions being applied and available, but the connector is now configured.
 
-> [!NOTE]
-> It may take several minutes to an hour for the permissions to be applied and available.
-
 ## Step 4: Discover JSON Batching capabilities using Microsoft Graph Explorer
 
 Before creating a Flow to consume our new connector, let’s discover some of the capabilities and features of JSON Batching.  
@@ -164,7 +161,7 @@ Before creating a Flow to consume our new connector, let’s discover some of th
 
 The sample batch operation batches three (3) HTTP GET requests and issues a single HTTP POST to the /v1.0/$batch Graph endpoint.
 
-```  
+```json  
 {
   "requests": [
     {
@@ -199,7 +196,7 @@ For example, execute the following two queries in the [Microsoft Graph Explorer]
 
 1. Query the `/v1.0/$batch` endpoint using the url “/me” (copy and paste request below).
 
-```
+```json
    "requests" : [
         {
           "id": 1,
@@ -213,7 +210,7 @@ For example, execute the following two queries in the [Microsoft Graph Explorer]
 
 2. Now query the `/beta/$batch` endpoint url “/me”  with the same request content (copy and paste request below).
 
-```
+```json
    "requests" : [
         {
           "id": 1,
@@ -229,7 +226,7 @@ What are the differences in the results returned?   Try some other queries to id
 
 In addition to different response content from the `/v1.0` and `/beta` endpoints, it is important to understand the possible errors when a batch request is made for which permission consent has not been granted.  For example, the following is a batch request item to create a OneNote Notebook.
 
-``` 
+```json 
    {
       "id": 1,
       "url": "/groups/65c5ecf9-3311-449c-9904-29a2c76b9a50/onenote/notebooks",
@@ -245,7 +242,7 @@ In addition to different response content from the `/v1.0` and `/beta` endpoints
 
 However, if the permissions to create OneNote Notebooks has not been granted, the following response is received.  Note the status code 403 (Forbidden) and the error message which indicates the OAuth token provided does not include the scopes required to completed the requested action.
 
-``` 
+```json
 {
   "responses": [
     {
@@ -289,7 +286,7 @@ In the end our Flow will look similar to the following image:
 8. Click the ellipsis and rename this action to `Batch POST-groups`
 9. Copy the following and paste into the **body** text box of the action
 
-``` 
+```json 
 {
   "requests": [
     {
@@ -298,11 +295,11 @@ In the end our Flow will look similar to the following image:
       "id": 1,
       "headers": { "Content-Type": "application/json" },
       "body": {
-        "description": "REPLACE_WITH_NAME_FROM_TRIGGER",
-        "displayName": "REPLACE_WITH_NAME_FROM_TRIGGER",
+        "description": "REPLACE",
+        "displayName": "REPLACE",
         "groupTypes": ["Unified"],
         "mailEnabled": true,
-        "mailNickname": "REPLACE_WITH_NAME_FROM_TRIGGER",
+        "mailNickname": "REPLACE",
         "securityEnabled": false
       }
     }
@@ -310,7 +307,7 @@ In the end our Flow will look similar to the following image:
 }
 ```
 
-10. Replace each `REPLACE_WITH_NAME_FROM_TRIGGER` placeholder by selecting the `Name` value from the manual trigger from the **Add dynamic content**
+10. Replace each `REPLACE` placeholder by selecting the `Name` value from the manual trigger from the **Add dynamic content**
 
 ![flow-team-2](./Images/flow-team2.png)
 
@@ -320,11 +317,11 @@ In the end our Flow will look similar to the following image:
 14.	Rename this second Batch action to `Batch PUT-team`
 15. Copy the following and paste into the **body** text box of the action
 
-``` 
+```json
 {
   "requests": [
     {
-      "url": "/groups/REPLACE WITH FORMULA/team",
+      "url": "/groups/REPLACE/team",
       "method": "PUT",
       "id": 1,
       "headers": {
@@ -348,10 +345,10 @@ In the end our Flow will look similar to the following image:
 }
 ```
 
-16.	Click `REPLACE WITH FORMULA` and paste the following formula into the **Expression**:
+16.	Click `REPLACE` and paste the following formula into the **Expression**:
 
-```
-body('Batch_POST-groups')?['responses']?[0]?['body']?['id']
+```json
+body('Batch_POST-groups').responses[0].body.id
 ```
 
 ![flow-formula](./Images/flow-formula.png)
@@ -360,14 +357,18 @@ This formula specifies that we want to use the group ID from the result of the f
 
 ![flow-team-3](./Images/flow-team3.png)
 
-17. Click **Save** the Flow and click **Test** to execute the Flow.
+17. Click **Save**, then Flow and click **Test** to execute the Flow.
+
+> [!TIP]
+> If you get receive and error resembling the image below, the expression is incorrect and likely references a Flow action it cannot find.  Ensure that the action name you are referencing matches exactly and click **Save** again.
+
+![flow-trbl-shoot](./Images/flow-trbl-shoot.png)
 
 18. Click the **I'll perform the trigger** action radio button and click **Test**
 
 19. Provide a name without spaces, and click **Run** to create a Team
- 
-![flow-team-4](./Images/flow-team4.png)
 
+![flow-team-4](./Images/flow-team4.png)
 
 20. Finally. click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
 
