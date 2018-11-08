@@ -270,7 +270,7 @@ Each request in your batch will return a status code and results or error inform
 
 ## Step 5: Create a Flow that creates Microsoft Teams using JSON Batching
 
-Now that we understand how to issue JSON batch requests and interpret and correlate the response, our final task is to consume our JSON Batch custom connector using Flow.  The following steps will walk you through creating a Flow to create and configure a Microsoft Team.  The Flow will use a manually triggered Flow.  The Flow will use the custom connector to send a POST request to create an Office 365 Unified Group, will pause for a delay while the group creation completes, and then will send  a PUT request to associate the group with a Microsoft Team.
+Now that we understand how to issue JSON batch requests and interpret and correlate the response, our next task is to consume our JSON Batch custom connector using Flow.  The following steps will walk you through creating a Flow to create and configure a Microsoft Team.  The Flow will use a manually triggered Flow.  The Flow will use the custom connector to send a POST request to create an Office 365 Unified Group, will pause for a delay while the group creation completes, and then will send  a PUT request to associate the group with a Microsoft Team.
 
 In the end our Flow will look similar to the following image:  
 
@@ -311,7 +311,7 @@ In the end our Flow will look similar to the following image:
 
 ![flow-team-2](./Images/flow-team2.png)
 
-11.	Click **+New action**, search for `delay` and add a Delay action and configure for 1 minute.
+11.	Click **+New step**, search for `delay` and add a Delay action and configure for 1 minute.
 12. Click **+New step** and type `Batch` in the search box
 13. Add the new **MS Graph Batch Connector** action you created again
 14.	Rename this second Batch action to `Batch PUT-team`
@@ -321,9 +321,9 @@ In the end our Flow will look similar to the following image:
 {
   "requests": [
     {
+      "id": 1,
       "url": "/groups/REPLACE/team",
       "method": "PUT",
-      "id": 1,
       "headers": {
         "Content-Type": "application/json"
       },
@@ -366,12 +366,82 @@ This formula specifies that we want to use the group ID from the result of the f
 
 18. Click the **I'll perform the trigger** action radio button and click **Test**
 
-19. Provide a name without spaces, and click **Run** to create a Team
+19. Provide a name without spaces, and click **Run flow** to create a Team
 
 ![flow-team-4](./Images/flow-team4.png)
 
 20. Finally, click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
+ 
+> [!NOTE]
+> You may have to click on your running Flow instance in the Run history list to view your Flow execution.
 
-Once the Flow completes, your Office 365 Group and Team have been configured. Click on the Batch action items to view the results of the JSON Batch calls.
+Once the Flow completes, your Office 365 Group and Team have been configured. Click on the Batch action items to view the results of the JSON Batch calls.  The `outputs` of the Batch PUT-team action should have a status code of 201 for a successful Team association similar to the image below.
 
 ![flow-team-5](./Images/flow-team5.png)
+
+## Step 6: Create a Flow to create a Microsoft Team with default Channels using JSON Batching
+
+The Flow we created in Step 5 uses the `$batch` API to make two individual calls to the Microsoft Graph.  Calling `$batch` this way provides some benefit and flexibility, but the true power of the `$batch` endpoint comes when executing multiple calls to Microsoft Graph in a single batch operation.  Our final step will extend our example of creating a Unified Group and associating a Team to include creating multiple default Channels for the Team. The following steps will  extend the Flow you created in [Step 5](#step-5-create-a-flow-that-creates-microsoft-teams-using-json-batching) to include creating 3 default Channels for the Team in a single `$batch` request.
+
+1. Open [Flow](https://flow.microsoft.com) and sign in
+2. Click **My Flows** in the top navigation
+3.  New Step
+4.  Batch 
+5.  Rename to Batch POST-channels
+6.  Copy and paste
+
+```json
+{
+  "requests": [
+    {
+      "id": 1,
+      "url": "/teams/REPLACE/channels",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "body": {
+        "displayName": "Marketing Collateral",
+        "description": "Marketing collateral and documentation."
+      }
+    },
+    {
+      "id": 2,
+      "dependsOn": [
+        "1"
+      ],
+      "url": "/teams/REPLACE/channels",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "body": {
+        "displayName": "Vendor Contracts",
+        "description": "Vendor documents, contracts, agreements and schedules."
+      }
+    },
+    {
+      "id": 3,
+      "dependsOn": [
+        "2"
+      ],
+      "url": "/teams/REPLACE/channels",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "body": {
+        "displayName": "General Client Agreements",
+        "description": "General Client documents and agreements."
+      }
+    }
+  ]
+}
+```
+
+
+7.	Click `REPLACE` and paste the following formula into the **Expression**:
+
+```json
+body('Batch_PUT-team').responses[0].body.id
+```
