@@ -25,6 +25,7 @@ In this lab you will leverage the Microsoft Graph JSON Batching REST API to crea
 
 | Version |        Date        |                    Comments                    |
 | ------- | ------------------ | ---------------------------------------------- |
+| 1.1     | November 07, 2018 | Added step 6 content for calling multiple operations |
 | 1.0     | October 22, 2018 | Add Microsoft Graph related product breakouts. |
 
 ## Disclaimer
