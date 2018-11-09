@@ -382,16 +382,16 @@ Once the Flow completes, your Office 365 Group and Team have been configured. Cl
 
 ## Step 6: Extend the Flow to create multiple Channels using JSON Batching
 
-The Flow we created in Step 5 uses the `$batch` API to make two individual calls to the Microsoft Graph.  Calling `$batch` this way provides some benefit and flexibility, but the true power of the `$batch` endpoint comes when executing multiple calls to Microsoft Graph in a single batch operation.  Our final step will extend our example of creating a Unified Group and associating a Team to include creating multiple default Channels for the Team. The following steps will  extend the Flow you created in [Step 5](#step-5-create-a-flow-that-creates-microsoft-teams-using-json-batching) to include creating 3 default Channels for the Team in a single `$batch` request.
+The Flow we created in Step 5 uses the `$batch` API to make two individual requests to the Microsoft Graph.  Calling the `$batch` endpoint this way provides some benefit and flexibility, but the true power of the `$batch` endpoint comes when executing multiple requests to Microsoft Graph in a single `$batch` call.  Our final step will extend our example of creating a Unified Group and associating a Team to include creating multiple default Channels for the Team. The following steps will  extend the Flow you created in [Step 5](#step-5-create-a-flow-that-creates-microsoft-teams-using-json-batching) to include creating 3 default Channels for the Team in a single `$batch` request.
 
 1. Open [Flow](https://flow.microsoft.com) and sign in
 2. Click **My Flows** in the top navigation
-3. Open the **Button -> Batch** Flow New Step
+3. Open the **Button -> Batch** Flow
 4. Click **Edit flow** to edit the flow created in [Step 5](#step-5-create-a-flow-that-creates-microsoft-teams-using-json-batching)
 5. Click **+New step** and type `Batch` in the search box
-6. Add another instance of the **MS Graph Batch Connector** action 
+6. Add another instance of the **MS Graph Batch Connector** action
 7. Click the ellipsis and rename this action to `Batch POST-channels`
-8. Copy the following and paste into the **body** text box of the action
+8. Copy the following JSON and paste into the **body** text box of the action
 
 ```json
 {
@@ -442,7 +442,7 @@ The Flow we created in Step 5 uses the `$batch` API to make two individual calls
 }
 ```
 
-Notice the three requests above are using the [dependsOn](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching#sequencing-requests-with-the-dependson-property) property to specify an order. and each will execute a POST request to create a new Channel. 
+Notice the three requests above are using the [dependsOn](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching#sequencing-requests-with-the-dependson-property) property to specify a sequence order, and each will execute a POST request to create a new Channel in our Team.
 
 9. Click each instance of `REPLACE` in the JSON you just copied and paste the following formula into the **Expression**:  
 
@@ -456,13 +456,14 @@ body('Batch_PUT-team').responses[0].body.id
 11. Click **Test** to execute the Flow.
 12. Click the **I'll perform the trigger** action radio button
 13. Click **Test**
-14. Provide a name without spaces, and click **Run flow** to create a Team
+14. Enter a group name in the **Name** field without spaces
+15. Click **Run flow** to execute the Flow
 
 ![flow-team-4](./Images/flow-team4.png)
 
-20. Click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
+16. Once the Flow starts, click the **See flow run activity link**, then click on the link to your running flow to see your Flow log.
 
-When the Flow completes, the final output for the `Batch POST-channels` action will have a 201 HTTP Status response for each Channel created.    
+When the Flow completes, the final output for the `Batch POST-channels` action will have a 201 HTTP Status response for each Channel created.
 
 ![flow-team-4](./Images/flow-channel2.png)
 
@@ -475,8 +476,12 @@ https://graph.microsoft.com/beta/teams/GROUP_ID/channels
 Replace the `GROUP_ID` with your new Groups Id property and click **Run Query**.
 
 > [!TIP]
-> You can find the Id of the new Group by checking the `id` returned in the `Batch POST-groups` action in our Flow.
+> You can find the `id` of the new Group by checking the `id` returned in the `Batch POST-groups` actions output in our Flow.
 
-The query should return results similar to the image below with the default **General** channel and the three channels we created using our `$batch` action.  
+The query should return results similar to the image below with the default **General** channel and the three channels we created using our `$batch` action with 3 requests.  
 
 ![flow-channel3](./Images/flow-channels3.png)
+
+While the above `Batch POST-channels` action was implemented in this lab as a  separate action, the calls to create the channels could have been added as additional calls in the `Batch PUT-team` action.  This would have created the Team and all Channels in a single batch call. Give that a try on your own.
+
+Finally, remember that [JSON Batching](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching) calls will return an HTTP status code for each request.  In a production process, you may want to combine post processing of the results with an [`Apply to each`](https://docs.microsoft.com/en-us/flow/apply-to-each) action and validate each individual response has a 201 status code or compensate for any other status codes received.  
