@@ -122,7 +122,9 @@ However, if the permissions to create OneNote Notebooks has not been granted, th
       "body": {
         "error": {
           "code": "40004",
-          "message": "The OAuth token provided does not have the necessary scopes to complete the request. Please make sure you are including one or more of the following scopes: Notes.ReadWrite.All,Notes.Read.All (you provided these scopes: Group.Read.All,Group.ReadWrite.All,User.Read,User.Read.All)",
+          "message": "The OAuth token provided does not have the necessary scopes to complete the request.
+            Please make sure you are including one or more of the following scopes: Notes.ReadWrite.All,
+            Notes.Read.All (you provided these scopes: Group.Read.All,Group.ReadWrite.All,User.Read,User.Read.All)",
           "innerError": {
             "request-id": "92d50317-aa06-4bd7-b908-c85ee4eff0e9",
             "date": "2018-10-17T02:01:10"

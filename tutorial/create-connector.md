@@ -37,6 +37,6 @@ After the connector has been created, copy the generated **Redirect URL**.
 
 ![A screen shot of the generated Redirect URL](./images/flow-conn5.png)
 
-Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Add the **Redirect URL** you copied as an additional **Reply URL**. Save the application in Azure Active Directory portal.
+Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Reply URLs** in the **Settings** blade. Add the **Redirect URL** you copied as an additional **Reply URL**. Save the application in Azure Active Directory portal.
 
 ![A screen shot of the Reply URLs blade in the Azure portal](./images/flow-conn6.png)
