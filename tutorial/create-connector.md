@@ -4,7 +4,7 @@ In this exercise, you will create a new custom connector which can be used in Fl
 
 Using a text editor, create a new empty file named `MSGraph-Delegate-Batch.swagger.json` and add the following code.
 
-[!code-json[](/LabFiles/MSGraph-Delegate-Batch.swagger.json)]
+[!code-json[](../LabFiles/MSGraph-Delegate-Batch.swagger.json)]
 
 Open a browser and navigate to [Microsoft Flow](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
 
