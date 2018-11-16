@@ -6,9 +6,13 @@ In the end your Flow will look similar to the following image:
 
 ![A screen shot of the completed Flow](./images/flow-team1.png)
 
-Open [Microsoft Flow](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the top navigation. Choose **Create from blank**. Enter `Manual` in the search box and add the **Manually trigger a flow** trigger.
+Open [Microsoft Flow](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the left-hand navigation. Choose **New**, then **Create from blank**. Choose **Create from blank**. Enter `Manual` in the search box and add the **Manually trigger a flow** trigger.
 
-Choose **Add an input**, select **Text** and enter `Name` as the title. Choose **New step** and type `Batch` in the search box. Add the **MS Graph Batch Connector** action. Choose the ellipsis and rename this action to `Batch POST-groups`.
+Choose **Add an input**, select **Text** and enter `Name` as the title.
+
+![A screen shot of the Manually trigger a flow trigger](./images/flow-team6.png)
+
+Choose **New step** and type `Batch` in the search box. Add the **MS Graph Batch Connector** action. Choose the ellipsis and rename this action to `Batch POST-groups`.
 
 Add the following code into the **body** text box of the action.
 
@@ -88,11 +92,11 @@ Choose **Save**, then Flow and choose **Test** to execute the Flow.
 > [!TIP]
 > If you receive an error like `The template validation failed: 'The action(s) 'Batch_POST-groups' referenced by 'inputs' in action 'Batch_2' are not defined in the template'`, the expression is incorrect and likely references a Flow action it cannot find. Ensure that the action name you are referencing matches exactly.
 
-Choose the **I'll perform the trigger** action radio button and choose **Test**. Provide a name without spaces, and choose **Run flow** to create a Team.
+Choose the **I'll perform the trigger** action radio button and choose **Save & Test**. Choose **Continue** in the dialog. Provide a name without spaces, and choose **Run flow** to create a Team.
 
 ![A screen shot of the Run flow dialog](./images/flow-team4.png)
 
-Finally, choose the **See flow run activity link**, then select the running Flow to see the activity log.
+Finally, choose the **See flow run activity** link, then select the running Flow to see the activity log.
 
 > [!NOTE]
 > You may have to click on your running Flow instance in the Run history list to view your Flow execution.

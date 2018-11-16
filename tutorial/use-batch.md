@@ -67,28 +67,19 @@ body('Batch_PUT-team').responses[0].body.id
 
 ![A screen shot of the expression in the dynamic content pane](./images/flow-channel1.png)
 
-Choose **Save**, then choose **Test** to execute the Flow. Select the **I'll perform the trigger** action radio button, then choose **Test**. Enter a unique group name in the **Name** field without spaces, and choose **Run flow** to execute the Flow.
+Choose **Save**, then choose **Test** to execute the Flow. Select the **I'll perform the trigger** action radio button, then choose **Save & Test**. Enter a unique group name in the **Name** field without spaces, and choose **Run flow** to execute the Flow.
 
-![A screen shot of the Run flow dialog](./images/flow-team4.png)
+![A screen shot of the Run flow dialog](./images/flow-channel3.png)
 
-Once the Flow starts, choose the **See flow run activity link**, then choose the running Flow to see the activity log.
+Once the Flow starts, choose the **See flow run activity** link, then choose the running Flow to see the activity log.
 
 When the Flow completes, the final output for the `Batch POST-channels` action has a 201 HTTP Status response for each Channel created.
 
 ![A screen shot of the successful flow activity log](./images/flow-channel2.png)
 
-Finally, open the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) again and paste the following into the query text box.
+Browse to [Microsoft Teams](https://teams.microsoft.com) and sign in with your Office 365 tenant administrator account. Verify that the team you just created appears and includes the three channels created by the `$batch` request.
 
-```text
-https://graph.microsoft.com/beta/teams/GROUP_ID/channels
-```
-
-Replace the `GROUP_ID` with your new Group's `id` property and click **Run Query**.
-
-> [!TIP]
-> You can find the `id` of the new Group by checking the `id` returned in the `Batch POST-groups` actions output in our Flow.
-
-The query should return results similar to the image below with the default **General** channel and the three channels we created using our `$batch` action with 3 requests.
+![A screen shot of the Teams app with the new team and channels showing](./images/team-channels.png)
 
 While the above `Batch POST-channels` action was implemented in this tutorial as a separate action, the calls to create the channels could have been added as additional calls in the `Batch PUT-team` action. This would have created the Team and all Channels in a single batch call. Give that a try on your own.
 
