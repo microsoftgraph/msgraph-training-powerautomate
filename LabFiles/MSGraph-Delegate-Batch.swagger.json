@@ -3,7 +3,7 @@
     "info": {
         "title": "MSGraph-Delegate-Batch",
         "description": "",
-        "version": "1.0"
+        "version": "1.1"
     },
     "host": "graph.microsoft.com",
     "basePath": "/",
@@ -23,9 +23,35 @@
                         }
                     }
                 },
-                "summary": "Batch",
+                "summary": "Batch (Beta)",
                 "description": "Execute Batch with Delegate Permission",
                 "operationId": "Batch",
+                "x-ms-visibility": "important",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "required": false,
+                    "schema": {
+                        "type": "object",
+                        "properties": {}
+                    },
+                    "x-ms-visibility": "important"
+                }]
+            }
+        },
+        "/v1.0/$batch": {
+            "post": {
+                "responses": {
+                    "default": {
+                        "description": "default",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "summary": "Batch (1.0)",
+                "description": "Execute Batch with Delegate Permission",
+                "operationId": "BatchV1",
                 "x-ms-visibility": "important",
                 "parameters": [{
                     "name": "body",
