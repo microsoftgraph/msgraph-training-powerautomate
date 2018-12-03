@@ -64,11 +64,11 @@ The response returned is shown below. Note the array of responses that is return
 
 Each response contains an `id`, `status`, `headers`, and `body` property. If the `status` property for a request indicates a failure, the `body` contains any error information returned from the request.
 
-To ensure an order of operations for the requests, individual requests can be sequenced using the [dependsOn](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching#sequencing-requests-with-the-dependson-property) property.
+To ensure an order of operations for the requests, individual requests can be sequenced using the [dependsOn](https://docs.microsoft.com/graph/json-batching#sequencing-requests-with-the-dependson-property) property.
 
 In addition to sequencing and dependency operations, JSON batching assumes a base path and executes the requests from a relative path. Each batch request element is executed from either the `/v1.0/$batch` OR `/beta/$batch` endpoints as specified. This can have significant differences as the `/beta` endpoint may return additional output which may NOT be returned in the `/v1.0` endpoint.
 
-For example, execute the following two queries in the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer).
+For example, execute the following two queries in the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
 1. Query the `/v1.0/$batch` endpoint using the url `/me` (copy and paste request below).
 

@@ -57,7 +57,7 @@ Add the following code into the **body** text box of the action.
 }
 ```
 
-Notice the three requests above are using the [dependsOn](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching#sequencing-requests-with-the-dependson-property) property to specify a sequence order, and each will execute a POST request to create a new channel in the new Team.
+Notice the three requests above are using the [dependsOn](https://docs.microsoft.com/graph/json-batching#sequencing-requests-with-the-dependson-property) property to specify a sequence order, and each will execute a POST request to create a new channel in the new Team.
 
 Select each instance of the `REPLACE` placeholder, then select **Expression** in the dynamic content pane. Add the following formula into the **Expression**.
 
@@ -83,4 +83,4 @@ Browse to [Microsoft Teams](https://teams.microsoft.com) and sign in with your O
 
 While the above `Batch POST-channels` action was implemented in this tutorial as a separate action, the calls to create the channels could have been added as additional calls in the `Batch PUT-team` action. This would have created the Team and all Channels in a single batch call. Give that a try on your own.
 
-Finally, remember that [JSON Batching](https://developer.microsoft.com/en-us/graph/docs/concepts/json_batching) calls will return an HTTP status code for each request. In a production process, you may want to combine post processing of the results with an [`Apply to each`](https://docs.microsoft.com/en-us/flow/apply-to-each) action and validate each individual response has a 201 status code or compensate for any other status codes received.
+Finally, remember that [JSON Batching](https://docs.microsoft.com/graph/json-batching) calls will return an HTTP status code for each request. In a production process, you may want to combine post processing of the results with an [`Apply to each`](https://docs.microsoft.com/flow/apply-to-each) action and validate each individual response has a 201 status code or compensate for any other status codes received.
