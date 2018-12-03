@@ -15,3 +15,7 @@ To complete this exercise in this post you will need the following:
 
 - Administrator access to an Office 365 tenancy. If you do not have one, visit the [Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) to sign up of a FREE developer tenant.
 - Access to [Microsoft Flow](https://flow.microsoft.com/).
+
+## Feedback
+
+Please provide any feedback on this tutorial in the [GitHub repository](https://github.com/microsoftgraph/msgraph-training-microsoftflow).
