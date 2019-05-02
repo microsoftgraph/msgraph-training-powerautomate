@@ -2,11 +2,11 @@
 
 In this exercise, you will create a new Azure Active Directory Application which will be used to provide the delegated permissions for the custom connector.
 
-Open a browser and navigate to [Azure Active Directory admin center](https://aad.portal.azure.com). Choose the **Azure Active Directory** link in the left navigation menu, then choose the **App registrations (Preview)** entry in the **Manage** section of the **Azure Active Directory** blade.
+Open a browser and navigate to [Azure Active Directory admin center](https://aad.portal.azure.com). Choose the **Azure Active Directory** link in the left navigation menu, then choose the **App registrations** entry in the **Manage** section of the **Azure Active Directory** blade.
 
 ![A screen shot of the Azure Active Directory blade in the Azure Active Directory admin center](./images/app-reg-preview1.png)
 
-Choose the **New registration** menu item at the top of the **App Registrations (Preview)** blade.
+Choose the **New registration** menu item at the top of the **App Registrations** blade.
 
 ![A screen shot of the App Registrations blade in the Azure Active Directory admin center](./images/app-reg-preview2.png)
 
