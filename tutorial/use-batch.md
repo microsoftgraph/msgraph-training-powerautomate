@@ -69,11 +69,7 @@ body('Batch_PUT-team').responses[0].body.id
 
 Choose **Save**, then choose **Test** to execute the Flow. Select the **I'll perform the trigger** action radio button, then choose **Save & Test**. Enter a unique group name in the **Name** field without spaces, and choose **Run flow** to execute the Flow.
 
-![A screen shot of the Run flow dialog](./images/flow-channel3.png)
-
-Once the Flow starts, choose the **See flow run activity** link, then choose the running Flow to see the activity log.
-
-When the Flow completes, the final output for the `Batch POST-channels` action has a 201 HTTP Status response for each Channel created.
+Once the Flow starts, choose the **Done** button to see the activity log. When the Flow completes, the final output for the `Batch POST-channels` action has a 201 HTTP Status response for each Channel created.
 
 ![A screen shot of the successful flow activity log](./images/flow-channel2.png)
 

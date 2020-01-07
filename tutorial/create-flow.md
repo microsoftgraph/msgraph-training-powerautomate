@@ -6,9 +6,9 @@ In the end your Flow will look similar to the following image:
 
 ![A screen shot of the completed Flow](./images/flow-team1.png)
 
-Open [Microsoft Flow](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the left-hand navigation. Choose **New**, then **Create from blank**. Choose **Create from blank**. Enter `Manual` in the search box and add the **Manually trigger a flow** trigger.
+Open [Microsoft Flow](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the left-hand navigation. Choose **New**, then **Instant--from blank**. Enter `Create Team` for **Flow name**, then select **Manually trigger a flow** under **Choose how to trigger this flow**. Choose **Create**.
 
-Choose **Add an input**, select **Text** and enter `Name` as the title.
+Select the **Manually trigger a flow** item, then choose **Add an input**, select **Text** and enter `Name` as the title.
 
 ![A screen shot of the Manually trigger a flow trigger](./images/flow-team6.png)
 
@@ -87,7 +87,7 @@ This formula specifies that we want to use the group ID from the result of the f
 
 ![A screen shot of the updated action body](./images/flow-team3.png)
 
-Choose **Save**, then Flow and choose **Test** to execute the Flow.
+Choose **Save**, then choose **Test** to execute the Flow.
 
 > [!TIP]
 > If you receive an error like `The template validation failed: 'The action(s) 'Batch_POST-groups' referenced by 'inputs' in action 'Batch_2' are not defined in the template'`, the expression is incorrect and likely references a Flow action it cannot find. Ensure that the action name you are referencing matches exactly.
@@ -96,11 +96,6 @@ Choose the **I'll perform the trigger** action radio button and choose **Save & 
 
 ![A screen shot of the Run flow dialog](./images/flow-team4.png)
 
-Finally, choose the **See flow run activity** link, then select the running Flow to see the activity log.
-
-> [!NOTE]
-> You may have to click on your running Flow instance in the Run history list to view your Flow execution.
-
-Once the Flow completes, your Office 365 Group and Team have been configured. Select the Batch action items to view the results of the JSON Batch calls. The `outputs` of the `Batch PUT-team` action should have a status code of 201 for a successful Team association similar to the image below.
+Finally, choose the **Done** to see the activity log. Once the Flow completes, your Office 365 Group and Team have been configured. Select the Batch action items to view the results of the JSON Batch calls. The `outputs` of the `Batch PUT-team` action should have a status code of 201 for a successful Team association similar to the image below.
 
 ![A screen shot of the successful flow activity log](./images/flow-team5.png)
