@@ -6,15 +6,11 @@ Using a text editor, create a new empty file named `MSGraph-Delegate-Batch.swagg
 
 [!code-json[](../LabFiles/MSGraph-Delegate-Batch.swagger.json)]
 
-Open a browser and navigate to [Microsoft Flow](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
+Open a browser and navigate to [Microsoft Flow](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. In the left-hand menu, expand **Data** and choose **Custom connectors**.
 
-![A screen shot of the drop-down menu in Microsoft Flow](./images/flow-conn1.png)
+![A screen shot of the Custom connectors menu item in Microsoft Flow](./images/flow-conn1.png)
 
-On the **Custom Connectors** page choose the **Create custom connector** link in the top right, then select the **Import an Open API file** item in the drop-down menu.
-
- ![A screen shot of the Create custom connector drop-down menu in Microsoft Flow](./images/flow-conn2.png)
-
-Enter `MS Graph Batch Connector` in the **Custom connector name** text box. Choose the folder icon to upload the Open API file. Browse to the `MSGraph-Delegate-Batch.swagger.json` file you created. Choose **Continue** to upload the Open API file.
+On the **Custom connectors** page choose the **New custom connector** link in the top right, then select the **Import an OpenAPI file** item in the drop-down menu. Enter `MS Graph Batch Connector` in the **Connector name** text box. Choose **Import** button to upload the Open API file. Browse to the `MSGraph-Delegate-Batch.swagger.json` file you created. Choose **Continue** to upload the OpenAPI file.
 
  ![A screen shot of the Create custom connector dialog](./images/flow-conn3.png)
 
