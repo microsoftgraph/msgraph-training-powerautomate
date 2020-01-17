@@ -6,7 +6,7 @@ In the end your Flow will look similar to the following image:
 
 ![A screen shot of the completed Flow](./images/flow-team1.png)
 
-Open [Microsoft Flow](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the left-hand navigation. Choose **New**, then **Instant--from blank**. Enter `Create Team` for **Flow name**, then select **Manually trigger a flow** under **Choose how to trigger this flow**. Choose **Create**.
+Open [Microsoft Power Automate](https://flow.microsoft.com) in your browser and sign in with your Office 365 tenant administrator account. Choose **My Flows** in the left-hand navigation. Choose **New**, then **Instant--from blank**. Enter `Create Team` for **Flow name**, then select **Manually trigger a flow** under **Choose how to trigger this flow**. Choose **Create**.
 
 Select the **Manually trigger a flow** item, then choose **Add an input**, select **Text** and enter `Name` as the title.
 
@@ -39,7 +39,7 @@ Add the following code into the **body** text box of the action.
 
 Replace each `REPLACE` placeholder by selecting the `Name` value from the manual trigger from the **Add dynamic content** menu.
 
-![A screen shot of the dynamic content menu in Microsoft Flow](./images/flow-team2.png)
+![A screen shot of the dynamic content menu in Microsoft Power Automate](./images/flow-team2.png)
 
 Choose **New step**, search for `delay` and add a **Delay** action and configure for 1 minute.
 
