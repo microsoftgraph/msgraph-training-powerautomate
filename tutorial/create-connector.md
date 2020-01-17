@@ -1,18 +1,18 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-In this exercise, you will create a new custom connector which can be used in Flow or in Azure Logic Apps. The Open API definition file is prebuilt with the correct path for the Microsoft Graph `$batch` endpoint and additional settings to enable simple import.
+In this exercise, you will create a new custom connector which can be used in Power Automate or in Azure Logic Apps. The Open API definition file is prebuilt with the correct path for the Microsoft Graph `$batch` endpoint and additional settings to enable simple import.
 
 Using a text editor, create a new empty file named `MSGraph-Delegate-Batch.swagger.json` and add the following code.
 
 [!code-json[](../LabFiles/MSGraph-Delegate-Batch.swagger.json)]
 
-Open a browser and navigate to [Microsoft Flow](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
+Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
 
-![A screen shot of the drop-down menu in Microsoft Flow](./images/flow-conn1.png)
+![A screen shot of the drop-down menu in Microsoft Power Automate](./images/flow-conn1.png)
 
 On the **Custom Connectors** page choose the **Create custom connector** link in the top right, then select the **Import an Open API file** item in the drop-down menu.
 
- ![A screen shot of the Create custom connector drop-down menu in Microsoft Flow](./images/flow-conn2.png)
+ ![A screen shot of the Create custom connector drop-down menu in Microsoft Power Automate](./images/flow-conn2.png)
 
 Enter `MS Graph Batch Connector` in the **Custom connector name** text box. Choose the folder icon to upload the Open API file. Browse to the `MSGraph-Delegate-Batch.swagger.json` file you created. Choose **Continue** to upload the Open API file.
 
