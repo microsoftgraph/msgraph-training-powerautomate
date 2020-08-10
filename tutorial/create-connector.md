@@ -8,6 +8,28 @@ There are two options to create a custom connector for Microsoft Graph:
 
 ### Create custom connector from blank template
 
+ Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
+
+ ![A screen shot of the drop-down menu in Microsoft Power Automate](./images/flow-conn1.png)
+
+ On the **Custom Connectors** page choose the **Create custom connector** link in the top right, then select the **Create from blank** item in the drop-down menu.
+
+  ![A screen shot of the Create custom connector drop-down menu in Microsoft Power Automate](./images/CustomConnector-1.png)
+
+ Enter `MS Graph Batch Connector` in the **Custom connector name** text box. Choose **Continue**.
+
+  ![A screen shot of the Create custom connector dialog](./images/CustomConnector-2.png)
+
+ On the connector configuration **General** page, fill in the fields as follows.
+
+ - **Schema**: HTTPS
+ - **Host**: `graph.microsoft.com`
+ - **Base URL**: `/`
+
+ ![A screen shot of the General tab in the connector configuration](./images/CustomConnector-3.png)
+ 
+ Choose **Security** button to continue.
+ 
 ### Create custom connector by importing OpenAPI file
 
 Using a text editor, create a new empty file named `MSGraph-Delegate-Batch.swagger.json` and add the following code.
