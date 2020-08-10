@@ -1,12 +1,12 @@
-# Microsoft Graph Training Module - Create a Microsoft Graph JSON Batch Custom Connector for Microsoft Flow & Azure Logic Apps
+# Microsoft Graph Training Module - Create a Microsoft Graph JSON Batch Custom Connector for Microsoft Power Automate & Azure Logic Apps
 
-This module will introduce you to working with the Microsoft Graph JSON Batching REST API to access data in Office 365. You will learn how to create and configure a custom connector for Flow, access the the Microsoft graph JSON Batch API, and use the custom connector in a Flow to create a Microsoft Team.
+This module will introduce you to working with the Microsoft Graph JSON Batching REST API to access data in Office 365. You will learn how to create and configure a custom connector for Microsoft Power Automate, access the the Microsoft Graph JSON Batch API, and use the custom connector in a flow to create a Microsoft Team.
 
-## Lab - Create a Microsoft Graph JSON Batch Custom Connector for Microsoft Flow & Azure Logic Apps
+## Lab - Create a Microsoft Graph JSON Batch Custom Connector for Microsoft Power Automate & Azure Logic Apps
 
-In this lab you will leverage the Microsoft Graph JSON Batching REST API to create a Custom Connector and Flow application.
+In this lab you will leverage the Microsoft Graph JSON Batching REST API to create a Custom Connector and flow application.
 
-- [Flow Microsoft Graph tutorial](https://docs.microsoft.com/graph/training/flow-tutorial)
+- [Power Automate Microsoft Graph tutorial](https://docs.microsoft.com/graph/training/flow-tutorial)
 
 ## Contributors
 
