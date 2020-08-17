@@ -5,7 +5,13 @@ The final configuration step to ensure the connector is ready for use is to auth
 > [!IMPORTANT]
 > The following steps requires that you are logged in with administrator privileges.
 
-In [Microsoft Flow](https://flow.microsoft.com), go to the Connector configuration screen and choose the **Test** link in the navigation menu. Choose the **New Connection** link. Sign in with your Office 365 tenant administrator's Azure Active Directory account.
+In [Microsoft Power Automate](https://flow.microsoft.com), go to the **Data** and choose the **Connections** page. Choose the **New Connection** link. Sign in with your Office 365 tenant administrator's Azure Active Directory account.
+
+![A screen shot of the permissions prompt](./images/CustomConnector-7.png)
+
+Find your custom connector and complete the connection by clicking the plus button.
+
+![A screen shot of the permissions prompt](./images/CustomConnector-8.png)
 
 When prompted for the requested permissions, check **Consent on behalf of your organization** and then choose **Accept** to authorize permissions.
 
