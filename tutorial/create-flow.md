@@ -10,7 +10,7 @@ Open [Microsoft Power Automate](https://flow.microsoft.com) in your browser and 
 
 Select the **Manually trigger a flow** item, then choose **Add an input**, select **Text** and enter `Name` as the title.
 
-![A screen shot of the Manually trigger a flow trigger](./images/flow-team6.png)
+![A screen shot of the Manually trigger a flow trigger](./images/flow-team6.PNG)
 
 Choose **New step** and type `Batch` in the search box. Add the **MS Graph Batch Connector** action. Choose the ellipsis and rename this action to `Batch POST-groups`.
 
