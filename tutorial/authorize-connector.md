@@ -11,7 +11,7 @@ In [Microsoft Power Automate](https://flow.microsoft.com), go to the **Data** an
 
 Find your custom connector and complete the connection by clicking the plus button. Sign in with your Office 365 tenant administrator's Azure Active Directory account.
 
-![A screen shot of the connections list](./images/connection-signin.png)
+![A screen shot of the connections list](./images/connection-sign-in.png)
 
 When prompted for the requested permissions, check **Consent on behalf of your organization** and then choose **Accept** to authorize permissions.
 
