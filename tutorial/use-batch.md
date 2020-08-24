@@ -65,13 +65,13 @@ Select each instance of the `REPLACE` placeholder, then select **Expression** in
 body('Batch_PUT-team').responses[0].body.id
 ```
 
-![A screen shot of the expression in the dynamic content pane](./images/flow-channel1.png)
+![A screen shot of the expression in the dynamic content pane](./images/dynamic-expression.png)
 
 Choose **Save**, then choose **Test** to execute the Flow. Select the **I'll perform the trigger** action radio button, then choose **Save & Test**. Enter a unique group name in the **Name** field without spaces, and choose **Run flow** to execute the Flow.
 
 Once the Flow starts, choose the **Done** button to see the activity log. When the Flow completes, the final output for the `Batch POST-channels` action has a 201 HTTP Status response for each Channel created.
 
-![A screen shot of the successful flow activity log](./images/flow-channel2.png)
+![A screen shot of the successful flow activity log](./images/batch-success.png)
 
 Browse to [Microsoft Teams](https://teams.microsoft.com) and sign in with your Office 365 tenant administrator account. Verify that the team you just created appears and includes the three channels created by the `$batch` request.
 
