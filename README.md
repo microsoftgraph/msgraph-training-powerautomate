@@ -6,22 +6,24 @@ This module will introduce you to working with the Microsoft Graph JSON Batching
 
 In this lab you will leverage the Microsoft Graph JSON Batching REST API to create a Custom Connector and flow application.
 
-- [Power Automate Microsoft Graph tutorial](https://docs.microsoft.com/graph/training/flow-tutorial)
+- [Power Automate Microsoft Graph tutorial](https://docs.microsoft.com/graph/tutorials/powerautomate)
 
 ## Contributors
 
-| Roles | Author(s) |
-| ------| ----------|
-| Lab Manuals | John Liu (Microsoft MVP, SharePointGurus ) @johnnliu |
-| Lab Manuals | Pete Skelly (ThreeWill) @pskelly |
+| Roles       | Author(s)                                            |
+|-------------|------------------------------------------------------|
+| Lab Manuals | John Liu (Microsoft MVP, SharePointGurus) @johnnliu  |
+| Lab Manuals | Pete Skelly (ThreeWill) @pskelly                     |
+| Lab Manuals | Ayca Bas (Microsoft) @aycabas                        |
 
 ## Version history
 
-| Version | Date | Comments |
-| ------- | -----| -------- |
-| 1.2 | November 27, 2018 | Onboarded to docs.microsoft.com/graph |
-| 1.1 | November 07, 2018 | Added step 6 content for calling multiple operations |
-| 1.0 | October 22, 2018 | Add Microsoft Graph related product breakouts. |
+| Version | Date              | Comments                                             |
+|---------|-------------------|------------------------------------------------------|
+| 1.3     | August 24, 2020   | Updated to Power Automate                            |
+| 1.2     | November 27, 2018 | Onboarded to docs.microsoft.com/graph                |
+| 1.1     | November 07, 2018 | Added step 6 content for calling multiple operations |
+| 1.0     | October 22, 2018  | Add Microsoft Graph related product breakouts.       |
 
 ## Disclaimer
 

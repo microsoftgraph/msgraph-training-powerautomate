@@ -18,4 +18,4 @@ To complete this exercise in this post you will need the following:
 
 ## Feedback
 
-Please provide any feedback on this tutorial in the [GitHub repository](https://github.com/microsoftgraph/msgraph-training-microsoftflow).
+Please provide any feedback on this tutorial in the [GitHub repository](https://github.com/microsoftgraph/msgraph-training-powerautomate).
