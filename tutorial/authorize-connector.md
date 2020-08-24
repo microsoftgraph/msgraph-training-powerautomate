@@ -5,7 +5,7 @@ The final configuration step to ensure the connector is ready for use is to auth
 > [!IMPORTANT]
 > The following steps requires that you are logged in with administrator privileges.
 
-In [Microsoft Power Automate](https://flow.microsoft.com), go to the **Data** and choose the **Connections** page. Choose the **New Connection** link.
+In [Microsoft Power Automate](https://flow.microsoft.com), go to the **Data** menu item on the left and choose the **Connections** page. Choose the **New Connection** link.
 
 ![A screen shot of the New connection button](./images/new-connection.png)
 
