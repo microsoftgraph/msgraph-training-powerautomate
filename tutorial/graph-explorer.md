@@ -2,11 +2,11 @@
 
 Before creating a Flow to consume the new connector, use [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to discover some of the capabilities and features of JSON batching in Microsoft Graph.
 
-Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in your browser. Sign in with your Office 365 tenant administrator account. Search for for **Batch** from the **Sample queries**. 
+Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in your browser. Sign in with your Office 365 tenant administrator account. Search for for **Batch** from the **Sample queries**.
 
 Select the **Perform parallel GETs** sample query in the left menu. Choose the **Run Query** button at the top right of the screen.
 
-![A screen shot of the show more samples dialog in Graph Explorer](./images/CustomConnector-12.png)
+![A screen shot of the Sample queries tab in Graph Explorer](./images/sample-queries.png)
 
 The sample batch operation batches three HTTP GET requests and issues a single HTTP POST to the `/v1.0/$batch` Graph endpoint.
 
@@ -84,11 +84,11 @@ For example, execute the following two queries in the [Microsoft Graph Explorer]
 }
 ```
 
-![A screen shot of the batch query in Graph Explorer with v1.0 selected](./images/CustomConnector-13.png)
+![A screen shot of the batch query in Graph Explorer with v1.0 selected](./images/batch-v1.png)
 
 Now use the version selector drop-down to change to the `beta` endpoint, and make the exact same request.
 
-![graph-explore-4](./images/CustomConnector-14.png)
+![graph-explore-4](./images/batch-beta.png)
 
 What are the differences in the results returned? Try some other queries to identify some of the differences.
 
