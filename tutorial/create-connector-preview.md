@@ -58,13 +58,13 @@ On the **Definition** page, select **New Action** and fill in the fields as foll
 Create **Request** bt selecting **Import from Sample** and fill in the fields as follows.
 
 - **Verb**: `POST`
-- **URL**: `https://graph.microsoft.com/beta/$batch`
+- **URL**: `https://graph.microsoft.com/v1.0/$batch`
 - **Headers**: Leave blank
 - **Body**: `{}`
 
 Select **Import**.
 
-![A screen shot of the Security tab in the connector configuration](./images/CustomConnector-6.png)
+![A screen shot of the Security tab in the connector configuration](./images/CustomConnector-10.png)
 
 Choose **Create Connector** on the top-right.
 
@@ -72,7 +72,7 @@ Choose **Create Connector** on the top-right.
 
 After the connector has been created, copy the generated **Redirect URL** from **Security** page.
 
-![A screen shot of the generated Redirect URL](./images/flow-conn5.png)
+![A screen shot of the generated Redirect URL](./images/CustomConnector-11.png)
 
 Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
 
@@ -113,7 +113,7 @@ Choose **Create Connector** on the top-right
 
 After the connector has been created, copy the generated **Redirect URL**.
 
-![A screen shot of the generated Redirect URL](./images/flow-conn5.png)
+![A screen shot of the generated Redirect URL](./images/CustomConnector-11.png)
 
 Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
 
