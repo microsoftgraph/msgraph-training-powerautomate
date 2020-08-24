@@ -55,7 +55,7 @@ On the **Definition** page, select **New Action** and fill in the fields as foll
 
 ![A screen shot of the Security tab in the connector configuration](./images/CustomConnector-5.png)
 
-Create **Request** bt selecting **Import from Sample** and fill in the fields as follows.
+Create **Request** by selecting **Import from Sample** and fill in the fields as follows.
 
 - **Verb**: `POST`
 - **URL**: `https://graph.microsoft.com/v1.0/$batch`
