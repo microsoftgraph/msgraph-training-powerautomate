@@ -68,7 +68,7 @@ Choose **Create Connector** on the top-right. After the connector has been creat
 
 ![A screen shot of the generated Redirect URL](./images/redirect-url.png)
 
-Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
+Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add a platform**, then select **Web**. Enter the redirect URL copied from the previous step in the **Redirect URIs**, then select **Configure**.
 
 ![A screen shot of the Reply URLs blade in the Azure portal](./images/update-app-reg.png)
 
@@ -99,6 +99,6 @@ Choose **Create Connector** on the top-right. After the connector has been creat
 
 ![A screen shot of the generated Redirect URL](./images/redirect-url.png)
 
-Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
+Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add a platform**, then select **Web**. Enter the redirect URL copied from the previous step in the **Redirect URIs**, then select **Configure**.
 
 ![A screen shot of the Reply URLs blade in the Azure portal](./images/update-app-reg.png)
