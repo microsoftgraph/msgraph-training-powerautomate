@@ -17,8 +17,6 @@ When prompted for the requested permissions, check **Consent on behalf of your o
 
 ![A screen shot of the permissions prompt](./images/flow-conn8.png)
 
-After you authorize the permissions, a connection is created in Flow.
-
-![A screen shot of the created connection in Microsoft Flow](./images/flow-conn9.png)
+After you authorize the permissions, a connection is created in Power Automate.
 
 The custom connector is now configured and enabled. There may be a delay in permissions being applied and available, but the connector is now configured.
