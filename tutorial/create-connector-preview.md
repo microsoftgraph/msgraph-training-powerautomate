@@ -7,9 +7,9 @@ There are two options to create a custom connector for Microsoft Graph:
 - Create from blank
 - Import an OpenAPI file
 
-## Create custom connector from blank template
+## Option 1: Create custom connector from blank template
 
-Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
+Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose **Data** on the left-hand side menu, and select the **Custom Connectors** item in the drop-down menu.
 
 ![A screen shot of the drop-down menu in Microsoft Power Automate](./images/flow-conn1.png)
 
@@ -74,17 +74,17 @@ After the connector has been created, copy the generated **Redirect URL** from *
 
 ![A screen shot of the generated Redirect URL](./images/flow-conn5.png)
 
-Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Reply URLs** in the **Settings** blade. Add the **Redirect URL** you copied as an additional **Reply URL**. Save the application in Azure Active Directory portal.
+Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
 
-![A screen shot of the Reply URLs blade in the Azure portal](./images/flow-conn6.png)
+![A screen shot of the Reply URLs blade in the Azure portal](./images/CustomConnector-9.png)
 
-## Create custom connector by importing OpenAPI file
+## Option 2: Create custom connector by importing OpenAPI file
 
 Using a text editor, create a new empty file named `MSGraph-Delegate-Batch.swagger.json` and add the following code.
 
 [!code-json[](../LabFiles/MSGraph-Delegate-Batch.swagger.json)]
 
-Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose the gear icon in the upper right, and select the **Custom Connectors** item in the drop-down menu.
+Open a browser and navigate to [Microsoft Power Automate](https://flow.microsoft.com). Sign in with your Office 365 tenant administrator account. Choose **Data** on the left-hand side menu, and select the **Custom Connectors** item in the drop-down menu.
 
 ![A screen shot of the drop-down menu in Microsoft Flow](./images/flow-conn1.png)
 
@@ -115,6 +115,6 @@ After the connector has been created, copy the generated **Redirect URL**.
 
 ![A screen shot of the generated Redirect URL](./images/flow-conn5.png)
 
-Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Reply URLs** in the **Settings** blade. Add the **Redirect URL** you copied as an additional **Reply URL**. Save the application in Azure Active Directory portal.
+Go back to the registered application in the [Azure Portal](https://aad.portal.azure.com) you created in the previous exercise. Select **Authentication** on the left-hand side menu. Select **Add URI** and add the **Redirect URL** you copied in the **Redirect URIs** under **Web**. Save the application in Azure Active Directory portal.
 
-![A screen shot of the Reply URLs blade in the Azure portal](./images/flow-conn6.png)
+![A screen shot of the Reply URLs blade in the Azure portal](./images/CustomConnector-9.png)
