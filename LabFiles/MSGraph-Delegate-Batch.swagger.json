@@ -13,7 +13,7 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/beta/$batch": {
+    "/v1.0/$batch": {
       "post": {
         "responses": {
           "default": {
@@ -43,7 +43,7 @@
   "parameters": {},
   "responses": {},
   "securityDefinitions": {
-    "undefined": {
+    "oauth2_auth": {
       "type": "oauth2",
       "flow": "accessCode",
       "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
@@ -53,7 +53,7 @@
   },
   "security": [
     {
-      "undefined": []
+      "oauth2_auth": []
     }
   ],
   "tags": []
