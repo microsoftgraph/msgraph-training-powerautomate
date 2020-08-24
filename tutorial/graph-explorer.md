@@ -2,33 +2,33 @@
 
 Before creating a Flow to consume the new connector, use [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to discover some of the capabilities and features of JSON batching in Microsoft Graph.
 
-Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in your browser. Sign in with your Office 365 tenant administrator account. Choose the **show more samples** link in the left navigation pane, and toggle the samples for **Batching** and **Microsoft Teams (beta)** to **On**.
-
-![A screen shot of the show more samples dialog in Graph Explorer](./images/graph-explore1.png)
+Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in your browser. Sign in with your Office 365 tenant administrator account. Search for for **Batch** from the **Sample queries**.
 
 Select the **Perform parallel GETs** sample query in the left menu. Choose the **Run Query** button at the top right of the screen.
+
+![A screen shot of the Sample queries tab in Graph Explorer](./images/sample-queries.png)
 
 The sample batch operation batches three HTTP GET requests and issues a single HTTP POST to the `/v1.0/$batch` Graph endpoint.
 
 ```json
 {
-  "requests": [
-    {
-      "url": "/me?$select=displayName,jobTitle,userPrincipalName",
-      "method": "GET",
-      "id": "1"
-    },
-    {
-      "url": "/me/messages?$filter=importance eq 'high'&$select=from,subject,receivedDateTime,bodyPreview",
-      "method": "GET",
-      "id": "2"
-    },
-    {
-      "url": "/me/events",
-      "method": "GET",
-      "id": "3"
-    }
-  ]
+    "requests": [
+        {
+            "url": "/me?$select=displayName,jobTitle,userPrincipalName",
+            "method": "GET",
+            "id": "1"
+        },
+        {
+            "url": "/me/messages?$filter=importance eq 'high'&$select=from,subject,receivedDateTime,bodyPreview",
+            "method": "GET",
+            "id": "2"
+        },
+        {
+            "url": "/me/events",
+            "method": "GET",
+            "id": "3"
+        }
+    ]
 }
 ```
 
@@ -84,11 +84,11 @@ For example, execute the following two queries in the [Microsoft Graph Explorer]
 }
 ```
 
-![A screen shot of the batch query in Graph Explorer with v1.0 selected](./images/graph-explore3.png)
+![A screen shot of the batch query in Graph Explorer with v1.0 selected](./images/batch-v1.png)
 
 Now use the version selector drop-down to change to the `beta` endpoint, and make the exact same request.
 
-![graph-explore-4](./images/graph-explore4.png)
+![graph-explore-4](./images/batch-beta.png)
 
 What are the differences in the results returned? Try some other queries to identify some of the differences.
 
