@@ -6,7 +6,7 @@ This module will introduce you to working with the Microsoft Graph JSON Batching
 
 In this lab you will leverage the Microsoft Graph JSON Batching REST API to create a Custom Connector and flow application.
 
-- [Power Automate Microsoft Graph tutorial](https://docs.microsoft.com/graph/tutorials/powerautomate)
+- [Power Automate Microsoft Graph tutorial](https://docs.microsoft.com/graph/tutorials/power-automate)
 
 ## Contributors
 
