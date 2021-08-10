@@ -1,0 +1,8 @@
+languages:
+- power automate
+extensions:
+  services:
+  - Azure AD
+  - Teams
+  - Microsoft identity platform
+noDependencies: true
